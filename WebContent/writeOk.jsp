@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 
 <%
-	request.setCharacterEncoding("euc-kr");
+	request.setCharacterEncoding("UTF-8");
 
-	Class.forName(""); //Ãß°¡
+	Class.forName(""); //ì¶”ê°€
 	
-	String url = ""; //Ãß°¡
+	String url = ""; //ì¶”ê°€
 	String id = "";
 	String pass = "";
 	String name = request.getParameter("name");
@@ -33,7 +33,7 @@
 	}
 %>
   <script language=javascript>
-   self.window.alert("ÀÔ·ÂÇÑ ±ÛÀ» ÀúÀåÇÏ¿´½À´Ï´Ù.");
+   self.window.alert("ì…ë ¥í•œ ê¸€ì„ ì €ì¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
    location.href="list.jsp"; 
 
 </script>
@@ -42,7 +42,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title></title>
 </head>
 <body>
