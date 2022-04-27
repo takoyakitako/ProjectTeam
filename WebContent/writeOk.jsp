@@ -8,14 +8,14 @@
 	Class.forName(""); //추가
 	
 	String url = ""; //추가
-	String id = "";
-	String pass = "";
+	String suer = "";
+	String passwd = "";
 	String name = request.getParameter("name");
 	String title = request.getParameter("title");
 	String memo = request.getParameter("memo");
 	
 	try {	
-		Connection conn = DriverManager.getConnection(url,id,pass);
+		Connection conn = DriverManager.getConnection(url,user,passwd);
 		
 		String sql = "INSERT INTO board1(USERNAME,TITLE,MEMO) VALUES(?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
