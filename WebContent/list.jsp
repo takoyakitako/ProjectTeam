@@ -4,19 +4,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>게시판</title>
 </head>
 <body>
 <%
 	Class.forName(""); //수정
 	String url = ""; //수정
-	String id = "";
-	String pass = "";
+	String user = "";
+	String passwd = "";
 	int total = 0;
 	
 	try {
-		Connection conn = DriverManager.getConnection(url,id,pass);
+		Connection conn = DriverManager.getConnection(url,user,passwd);
 		Statement stmt = conn.createStatement();
 
 		String sqlCount = "SELECT COUNT(*) FROM board";
