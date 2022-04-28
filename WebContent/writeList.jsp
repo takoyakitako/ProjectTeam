@@ -5,18 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판</title>
+<title>게시판 목록</title>
 </head>
 <body>
 <%
-	Class.forName(""); //수정
-	String url = ""; //수정
-	String user = "";
-	String passwd = "";
+	Class.forName("org.mariadb.jdbc.Driver"); //수정
+	String url = "jdbc:mariadb://localhost:3306/jiyedb";
+	String user = "jiye";
+	String pwd = "1111";
 	int total = 0;
 	
 	try {
-		Connection conn = DriverManager.getConnection(url,user,passwd);
+		Connection conn = DriverManager.getConnection(url,user,pwd);
 		Statement stmt = conn.createStatement();
 
 		String sqlCount = "SELECT COUNT(*) FROM board";
@@ -28,7 +28,7 @@
 		rs.close();
 		out.print("총 게시물 : " + total + "개");
 		
-		String sqlList = "SELECT NUM, USERNAME, TITLE, TIME, HIT from board order by NUM DESC";
+		String sqlList = "SELECT num, writer, title, regtime, hits from board order by num DESC";
 		rs = stmt.executeQuery(sqlList);
 		
 %>
