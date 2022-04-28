@@ -5,19 +5,17 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	Class.forName(""); //추가
-	
-	String url = ""; //추가
-	String suer = "";
-	String passwd = "";
+	Class.forName("org.mariadb.jdbc.Driver"); //수정
+	String url = "jdbc:mariadb://localhost:3306/jiyedb";
+	String user = "jiye";
+	String pwd = "1111";
 	String name = request.getParameter("name");
 	String title = request.getParameter("title");
 	String memo = request.getParameter("memo");
 	
 	try {	
-		Connection conn = DriverManager.getConnection(url,user,passwd);
-		
-		String sql = "INSERT INTO board1(USERNAME,TITLE,MEMO) VALUES(?,?,?)";
+		Connection conn = DriverManager.getConnection(url,user,pwd);
+		String sql = "INSERT INTO board( writer, title, content) VALUES(?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 		pstmt.setString(1, name);
@@ -34,7 +32,7 @@
 %>
   <script language=javascript>
    self.window.alert("입력한 글을 저장하였습니다.");
-   location.href="list.jsp"; 
+   location.href="writeList.jsp"; 
 
 </script>
 
@@ -42,7 +40,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title></title>
 </head>
 <body>
