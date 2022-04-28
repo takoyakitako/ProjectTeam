@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>게시판 작성</title>
 </head>
 <body>
@@ -53,7 +53,7 @@
      <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
      <tr align="center">
       <td>&nbsp;</td>
-      <td colspan="2"><input type=submit onclick="location.href='writeOk.jsp'" value="등록">
+      <td colspan="2"><input type=button onclick="location.href='writeOk.jsp'" value="등록">
        <input type=button value="취소">
       <td>&nbsp;</td>
      </tr>
