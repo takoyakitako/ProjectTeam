@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>                     
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 쓰기</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!--=============== Font Awesome 5 ===============-->
+
+    <script src="https://kit.fontawesome.com/b335c44d43.js" crossorigin="anonymous"></script>
+
+    <!--=============== flickity 라이브라리 ===============-->
+    <script src="./js/flickity.pkgd.js"></script>
+    <link rel="stylesheet" href="./css/flickity.css">
+</head>
+
+<body>
+    <!--=============== header ===============-->
+    <header>
+        <div class="container header-wrapper">
+            <div class="header-left-title">
+                <h1><a class="logo" href="main.html">recipes</h1>
+            </div>
+            <div class="searchArea" id="makeImg">
+                <form id="form4" action="#" method="post">
+                    <input type="text" id="inText" class="searchText" />
+                    <button class="searchButton" id="sbtn4" type="submit"><i class="fas fa-search searchImg"></i></button>
+                    </form>
+            </div>
+            <div class="header-right-item">
+                <ul class="header-list-item">
+                    <li class="about"><a href="write.html">글쓰기</a></li>
+                    <li class="login"><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket icon"></i></a></li>
+                    <li class="my-page">
+                        <a href="mypage.html" class="drawer">
+                            <i class="fa-regular fa-user icon"></i></a>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!--=============== 본문내용 ===============-->
+    <section class="main">
+        <!--글쓰기 영역-->
+ 
+        <main role="main" class="container">
+            <form name="form" method="POST" action="/bulletin_wr01">
+                <div class="pt-1">
+                    <input type="text" name="title" placeholder="제목을 입력하세요" style="border-radius:5px; width:100%; padding:5px;">
+                </div>
+
+                <br>
+                
+                음식종류 <input type="text" list="food">
+                    <datalist id="food">
+                    	<option value="한식">
+                    	<option value="일식">
+                    	<option value="중식">
+                    	<option value="양식">
+                    </datalist>
+
+                <div class="pt-1">
+                    <textarea id="summernote" name="contents"></textarea>
+                </div>
+                  
+                <script>
+                    $('#summernote').summernote({
+                      placeholder: '내용을 입력해주세요',
+                      tabsize: 2,
+                      height: 300
+                    });
+                  </script>      
+                  
+                <br>
+
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+
+                <div class="pt-1 text-right">
+                    <button class="btn btn btn-success" onclick="location.href='writeOk.jsp'" type="submit" style="width:10%; padding:5px;">등록하기</button>
+                </div>    
+            </form>
+        </main>        
+
+       
+    </section>
+
+    <!--=============== footer ===============-->
+    <footer>
+        <p>Since 2022 </p>
+        <a href="produce.html">회사소개</a>
+    </footer>
+
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+
+
+</html>
