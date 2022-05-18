@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+    <style type="text/css">
+    #wrap {
+        width: 1000px;
+	    margin:auto;
+    }
+
+    .wrap {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info {
+        width: 30%;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    
+    
+    .btn {
+      position:relative;
+      left:40%;
+      transform: translateX(-50%);
+      margin-bottom: 40px;
+      width:80%;
+      height:70px;
+      background: linear-gradient(125deg,#ecea81,#22de73,#ecea81);
+      background-position: left;
+      background-size: 200%;
+      color:white;
+      font-weight: bold;
+      border:none;
+      cursor:pointer;
+      transition: 0.4s;
+      display:inline;
+    }
+    
+    .btn:hover {
+      background-position: right;
+    }
+    
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 정보</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!--=============== Font Awesome 5 ===============-->
+
+    <script src="https://kit.fontawesome.com/b335c44d43.js" crossorigin="anonymous"></script>
+
+    <!--=============== flickity 라이브라리 ===============-->
+    <script src="./js/flickity.pkgd.js"></script>
+    <link rel="stylesheet" href="./css/flickity.css">
+</head>
+
+<body>
+    <!--=============== header ===============--> 
+    <header>
+        <div class="container header-wrapper">
+            <div class="header-left-title">
+                <a class="logo" href="main.html">recipes</a>
+            </div>
+            <div class="searchArea" id="makeImg">
+                <form id="form4" action="#" method="post">
+                    <input type="text" id="inText" class="searchText" />
+                    <button class="searchButton" id="sbtn4" type="submit"><i class="fas fa-search searchImg"></i></button>
+                    </form>
+            </div>
+            <div class="header-right-item">
+                <ul class="header-list-item">
+                    <li class="login"><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket icon"></i></a></li>
+                    <li class="write"><a href="write.html"><i class="fa-solid fa-pen-to-square icon"></i></a></li>
+                    <li class="my-page"><a href="mypage.html" class="drawer"><i class="fa-regular fa-user icon"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!--=============== 초록색 바 ===============-->
+    <section class="top">
+        <div class="container">
+            <ul class="top-list-item">
+                <li><a href="notice.html" >공지사항</a></li>
+                <li><a href="myinfo.html" >회원정보</a></li>
+                <li><a href="myRecipe.html" >나의 게시물</a></li>
+                <li><a href="faboriteRecipe.html" >즐겨찾기</a></li>
+                <li><a href="myComment.html" >작성한 댓글</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!--=============== 본문내용 ===============-->
+    <section class="main">
+        <div class="wrap">
+            <div class="info">
+                <button class="btn" type="button"  onclick="location.href='myUpdate.html' ">정보수정</button>
+                <button class="btn" type="button"  onclick="location.href='main.html' ">회원탈퇴</button>
+            </div>
+        </div>
+    </section>
+
+    <!--=============== footer ===============-->
+    <footer>
+        <p>Since 2022 </p>
+        <a href="produce.html">회사소개</a>
+    </footer>
+
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+
+
+</html>
