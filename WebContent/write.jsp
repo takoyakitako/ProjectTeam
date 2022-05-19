@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
-<script language = "javascript"> // ÀÚ¹Ù ½ºÅ©¸³Æ® ½ÃÀÛ 
+<script language = "javascript"> // ìë°” ìŠ¤í¬ë¦½íŠ¸ ì‹œì‘ 
 	function writeCheck() { 
 		var form = document.writeform; 
-		if( !form.name.value ) { alert( "ÀÌ¸§À» Àû¾îÁÖ¼¼¿ä" ); form.name.focus(); return; } 
-		if( !form.title.value ) { alert( "Á¦¸ñÀ» Àû¾îÁÖ¼¼¿ä" ); form.title.focus(); return; } 
-		if( !form.memo.value ) { alert( "³»¿ëÀ» Àû¾îÁÖ¼¼¿ä" ); form.memo.focus(); return; } 
+		if( !form.name.value ) { alert( "ì´ë¦„ì„ ì ì–´ì£¼ì„¸ìš”" ); form.name.focus(); return; } 
+		if( !form.title.value ) { alert( "ì œëª©ì„ ì ì–´ì£¼ì„¸ìš”" ); form.title.focus(); return; } 
+		if( !form.memo.value ) { alert( "ë‚´ìš©ì„ ì ì–´ì£¼ì„¸ìš”" ); form.memo.focus(); return; } 
 	form.submit(); } 
 </script>
 
@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>°Ô½ÃÆÇ ÀÛ¼º</title>
+<title>ê²Œì‹œíŒ ì‘ì„±</title>
 </head>
 <body>
 <table>
@@ -24,28 +24,28 @@
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
      <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
       <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
-      <td>±Û¾²±â</td>
+      <td>ê¸€ì“°ê¸°</td>
       <td width="5"><img src="img/table_right.gif" width="5" height="30" /></td>
      </tr>
     </table>
    <table>
      <tr>
       <td>&nbsp;</td>
-      <td align="center">Á¦¸ñ</td>
+      <td align="center">ì œëª©</td>
       <td><input name="title" size="50" maxlength="100"></td>
       <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
     <tr>
       <td>&nbsp;</td>
-      <td align="center">ÀÌ¸§</td>
+      <td align="center">ì´ë¦„</td>
       <td><input name="name" size="50" maxlength="50"></td>
       <td>&nbsp;</td>
      </tr>
       <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
      <tr>
       <td>&nbsp;</td>
-      <td align="center">³»¿ë</td>
+      <td align="center">ë‚´ìš©</td>
       <td><textarea name="memo" cols="50" rows="13"></textarea></td>
       <td>&nbsp;</td>
      </tr>
@@ -53,8 +53,8 @@
      <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
      <tr align="center">
       <td>&nbsp;</td>
-      <td colspan="2"><input type=button value="µî·Ï">
-       <input type=button value="Ãë¼Ò">
+      <td colspan="2"><input type=button onclick="location.href='writeOk.jsp'" value="ë“±ë¡">
+       <input type=button value="ì·¨ì†Œ">
       <td>&nbsp;</td>
      </tr>
     </table>

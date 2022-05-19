@@ -1,22 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>°Ô½ÃÆÇ</title>
+<meta charset="UTF-8">
+<title>ê²Œì‹œíŒ ëª©ë¡</title>
 </head>
 <body>
 <%
-	Class.forName(""); //¼öÁ¤
-	String url = ""; //¼öÁ¤
-	String id = "";
-	String pass = "";
+	Class.forName("org.mariadb.jdbc.Driver"); //ìˆ˜ì •
+	String url = "jdbc:mariadb://localhost:3306/jiyedb";
+	String user = "jiye";
+	String pwd = "1111";
 	int total = 0;
 	
 	try {
-		Connection conn = DriverManager.getConnection(url,id,pass);
+		Connection conn = DriverManager.getConnection(url,user,pwd);
 		Statement stmt = conn.createStatement();
 
 		String sqlCount = "SELECT COUNT(*) FROM board";
@@ -26,9 +26,9 @@
 			total = rs.getInt(1);
 		}
 		rs.close();
-		out.print("ÃÑ °Ô½Ã¹° : " + total + "°³");
+		out.print("ì´ ê²Œì‹œë¬¼ : " + total + "ê°œ");
 		
-		String sqlList = "SELECT NUM, USERNAME, TITLE, TIME, HIT from board order by NUM DESC";
+		String sqlList = "SELECT num, writer, title, regtime, hits from board order by num DESC";
 		rs = stmt.executeQuery(sqlList);
 		
 %>
@@ -36,18 +36,18 @@
   <tr height="5"><td width="5"></td></tr>
  <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
    <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
-   <td width="73">¹øÈ£</td>
-   <td width="379">Á¦¸ñ</td>
-   <td width="73">ÀÛ¼ºÀÚ</td>
-   <td width="164">ÀÛ¼ºÀÏ</td>
-   <td width="58">Á¶È¸¼ö</td>
+   <td width="73">ë²ˆí˜¸</td>
+   <td width="379">ì œëª©</td>
+   <td width="73">ìž‘ì„±ìž</td>
+   <td width="164">ìž‘ì„±ì¼</td>
+   <td width="58">ì¡°íšŒìˆ˜</td>
    <td width="7"><img src="img/table_right.gif" width="5" height="30" /></td>
   </tr>
 <%
 	if(total==0) {
 %>
 	 		<tr align="center" bgcolor="#FFFFFF" height="30">
-	 	   <td colspan="6">µî·ÏµÈ ±ÛÀÌ ¾ø½À´Ï´Ù.</td>
+	 	   <td colspan="6">ë“±ë¡ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.</td>
 	 	  </tr>
 <%
 	 	} else {
@@ -86,7 +86,7 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
-   <td><input type=button value="±Û¾²±â"></td>
+   <td><input type=button onclick="location.href='write.jsp'" value="ê¸€ì“°ê¸°"></td>
   </tr>
 </table>
 </body>

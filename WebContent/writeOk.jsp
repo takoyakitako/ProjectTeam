@@ -1,23 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 
 <%
-	request.setCharacterEncoding("euc-kr");
+	request.setCharacterEncoding("UTF-8");
 
-	Class.forName(""); //Ãß°¡
-	
-	String url = ""; //Ãß°¡
-	String id = "";
-	String pass = "";
+	Class.forName("org.mariadb.jdbc.Driver"); //ìˆ˜ì •
+	String url = "jdbc:mariadb://localhost:3306/jiyedb";
+	String user = "jiye";
+	String pwd = "1111";
 	String name = request.getParameter("name");
 	String title = request.getParameter("title");
 	String memo = request.getParameter("memo");
 	
 	try {	
-		Connection conn = DriverManager.getConnection(url,id,pass);
-		
-		String sql = "INSERT INTO board1(USERNAME,TITLE,MEMO) VALUES(?,?,?)";
+		Connection conn = DriverManager.getConnection(url,user,pwd);
+		String sql = "INSERT INTO board( writer, title, content) VALUES(?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 		pstmt.setString(1, name);
@@ -33,8 +31,8 @@
 	}
 %>
   <script language=javascript>
-   self.window.alert("ÀÔ·ÂÇÑ ±ÛÀ» ÀúÀåÇÏ¿´½À´Ï´Ù.");
-   location.href="list.jsp"; 
+   self.window.alert("ì…ë ¥í•œ ê¸€ì„ ì €ì¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
+   location.href="writeList.jsp"; 
 
 </script>
 
